@@ -2,28 +2,27 @@
 
 This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### Requirements ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* Ubuntu 14.04
+* Python 2.7
+* tensorflow 0.10
+* numpy
+
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* training_relu.py
 
-### Contribution guidelines ###
+    This is the script to train data from csv file for machine learning.
 
-* Writing tests
-* Code review
-* Other guidelines
+* predict.py
 
-### Who do I talk to? ###
+    This is the script to predict the data. The format is such as below:
 
-* Repo owner or admin
-* Other community or team contact
+        python predict.py csv_file
+        python predict.py feature1 feature2 feature3 feature4 feature5 feature6
+
+    First case is predict the csv file and save the result to csv file, too.
+
+    Second case is predict the value for input by argument in command window and display the result in command window, too.
