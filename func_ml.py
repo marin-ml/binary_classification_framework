@@ -6,6 +6,9 @@ import math
 
 
 def xaver_init(n_inputs, n_outputs, uniform=True):
+    """
+        Model weight initializer
+    """
     if uniform:
         init_range = tf.sqrt(6.0/ (n_inputs + n_outputs))
         return tf.random_uniform_initializer(-init_range, init_range)
@@ -16,6 +19,9 @@ def xaver_init(n_inputs, n_outputs, uniform=True):
 
 
 def load_training_data(csv_data, y_allow=True):
+    """
+        Load the training data from csv file
+    """
     x_training = []
     y_training = []
 

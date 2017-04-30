@@ -26,3 +26,8 @@ This README would normally document whatever steps are necessary to get your app
     First case is predict the csv file and save the result to csv file, too.
 
     Second case is predict the value for input by argument in command window and display the result in command window, too.
+
+    for example:
+
+        python predict.py validate.csv
+        python predict.py 0.21 -0.3 0.5 1.25 0.2 2.0
