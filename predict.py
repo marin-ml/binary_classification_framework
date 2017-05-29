@@ -19,7 +19,7 @@ if __name__ == "__main__":
     learning_rate = 0.001
 
     """ ------------------------------ load training data ----------------------------- """
-    print "Loading training data ..."
+    print("Loading training data ...")
     if run_mode == 0:
         csv_data = func_ml.load_csv(predict_file)
         x_train, _ = func_ml.load_training_data(csv_data[1:], False)
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         x_train, _ = func_ml.load_training_data(csv_data, False)
 
     """ -------------------- configuration binary classification model ------------------ """
-    print "Configuring binary classification model ..."
+    print("Configuring binary classification model ...")
     features = len(x_train[0])
     sess, x, _, _, _, y_pre = func_ml.config_model(learning_rate, features)
 
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     sess.run(init)
     saver = tf.train.Saver()
 
-    print "loading saved model ..."
+    print("loading saved model ...")
     try:
         saver.restore(sess, 'model_relu')
     except:
@@ -56,6 +56,6 @@ if __name__ == "__main__":
             save_data.append(csv_data[i])
 
         func_ml.save_csv("pred_" + predict_file, save_data)
-        print "Prediction Completed!"
+        print("Prediction Completed!")
     else:
-        print "Predicted value is : ", predict_y[0]
+        print("Predicted value is : ", predict_y[0])
