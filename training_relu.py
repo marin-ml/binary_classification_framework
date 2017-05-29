@@ -23,7 +23,10 @@ if __name__ == "__main__":
     saver = tf.train.Saver()
 
     print("loading saved model ...")
-    saver.restore(sess, 'model_relu')
+    try:
+        saver.restore(sess, 'model_relu')
+    except:
+        pass
 
     """ --------------------------------- Training data --------------------------------- """
     print("Training model ...")
@@ -36,4 +39,4 @@ if __name__ == "__main__":
             print(step, sess.run(p_cost, feed_dict={x: x_train, y: y_train}), acc * 100)
             saver.save(sess, 'model_relu')
 
-    print ("Optimization Finished!")
+    print("Optimization Finished!")
