@@ -23,10 +23,7 @@ if __name__ == "__main__":
     saver = tf.train.Saver()
 
     print("loading saved model ...")
-    try:
-        saver.restore(sess, 'model_relu')
-    except:
-        pass
+    saver.restore(sess, 'model_relu')
 
     """ --------------------------------- Training data --------------------------------- """
     print("Training model ...")
